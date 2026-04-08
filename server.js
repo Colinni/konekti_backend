@@ -8,9 +8,12 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
+// Get Firebase credentials from environment variable
+const firebaseConfig = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+
 // Initialize Firebase
 admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount)
+    credential: admin.credential.cert(firebaseConfig)
 });
 
 const db = admin.firestore();
