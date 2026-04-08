@@ -8,21 +8,6 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-// Your Firebase Service Account
-const serviceAccount = {
-  "type": "service_account",
-  "project_id": "konekti-ef732",
-  "private_key_id": "30b1bc3ffae1e621c61ba3f5c5720d7e3f9b6ff8",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDJ1Z8Sc+VFuQHm\nJudC1uuJChmbETyC1uvf7mqBFkV0jUgPTCKfYxA/Dfm2e4GqfmUIOOQux3Bo3Le/\nQLbP+CtevZHkg++U/A07coq6Agcgg1RZTx34pHo7saVqlVqnPelt03PIpOuxYdPy\nuLIUFCS+xC4V6dxxPpLvq/KsxdqTIZiM+5/hV9uW0W98PuhS7dBQa6XN3tUw1Oht\nWc3wNQoxeyidgr7lecmSRpBdqrfuEOOmeNh6S88yZd6PtPR2gTVdxLufYhAI5NG4\n4Jf1l+/kwHfyrM+lNV4qMUZmPYQuT9UiaAC3uth4b+ypsv9zW2e/F6vsp/HudOol\ncelNv6nhAgMBAAECggEAQfvyNNSp3Gj2+3i1e08LErK4G09/wmCkHYHy1L/ktg1o\nRQQFf6khyxN1E1j+U7BdtFnxE3AFSmr6MW7lNUlzWFZOZ3BQt5rNcqVoQBZgoRr+\nTPJGIJ8ZDQHvS9CHIgzmDw8ll69/FG8gnQYPxeut9aXqUSSy+lzUKcHDpQNMCXRK\nFVzfW1u/WNJAAXao4EFNgcv+ChSaeFjQf0gxb+Q0U4xuMK2BmYXo86GImB+TdXbq\nu033Mh7JjxeM42p+T6EBDxrrUlmxbNQtGYUdr8p7lkrZbpjJz1taFk5w1AhL0BsI\nq40pJIl+Bv1IPxAaJHIKkw4JX0SNvVU9PUA3HlfYZwKBgQDrTeOwHWHgb8ZHReci\nuRoJ0RLJiPpxx16uK+A08kEJ43MtKwSIZdnWHM8c96HAbY4PMenUwCryHIh3neNR\nrDS2SAmD6i0llLt0wvqnoYsKEf2HOxRQ0E3QmNubFWx2w12vM5KbNd2S/pLfxy/Y\nTVxfbHnFXblEjVtIy9dM1WWrfwKBgQDbliBDERq1OtKt3UJ+ZUIahGtREEst/EGX\nQTvW/br7Hb6lbHBWZn3EWhTCrJgZ93Pi2DAXNTb9aD9kGe5W07LL0/lCrFjIFX/U\nE9suyiJaPrjJl8S/U8hL9Q+71atNqM3ygAhFOGwJLDstRdK1cOwcrPaQfxoDkf4+\nZMa22HDanwKBgG3qpo+gShZjYEXu+3eW6/jl91a5a/Q2Y54M1OEmwQbzftv8mlN0\n8Hs6Xe10J9UR2Ch08nv1gJo0hfMKiCOgw8bag8dhXtGNVrvGUPx5U8/Sc5H2IRlX\nFOJ6ZSteqJoZzOuItdVXJjgCP23VSB5MlPfmXkO58k95kMjCn8I+dQ3VAoGBAMCc\naOQrRrAdTtuvLzpLe7Zi3PeYQTmvAaG5WNH2cmL+7lGQUuGWuU7YbUltt2Vfh0k9\ntMFGrluNa71UeZmzzCu6XfQ71Qx8v0m5uRLLv2JFjjVWaQAib5kg9pIelEpkfXHv\nGFIPccSCBc5qZq88w/9LQGPy+VCUaN017JBKPoOlAoGBALu2O/iRLab43fMmY+Kb\nPE2RwK5qp3E0b+RevprP8+K+RngjvCkGa9OOW5aYPu8+4KazbiCg4SpuWMQwL1CI\n2alwAR6fwk3B4iVk149Y8ZwYeao7vaHqx/0L7P4fZ6ooU5SL8Xsy3Cnbnq++nYqW\nL043x61FmRULxTtGdjgY+ni7\n-----END PRIVATE KEY-----\n",
-  "client_email": "firebase-adminsdk-fbsvc@konekti-ef732.iam.gserviceaccount.com",
-  "client_id": "109834527072726758144",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fbsvc%40konekti-ef732.iam.gserviceaccount.com",
-  "universe_domain": "googleapis.com"
-};
-
 // Initialize Firebase
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
